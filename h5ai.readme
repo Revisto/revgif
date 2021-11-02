@@ -1,0 +1,1 @@
+docker run -d -p 2222:80 -v static:/var/www/static/ clue/h5ai
