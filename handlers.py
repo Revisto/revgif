@@ -6,14 +6,13 @@ from controllers.bot_controller import BotController
 
 
 def start(update: Update, context: CallbackContext) -> int:
-    return BotController(update, context).start()
-
+    return BotController(update, context).start_and_help()
 
 def help_command(update: Update, context: CallbackContext) -> int:
-    return BotController(update, context).help()
+    return BotController(update, context).start_and_help()
 
 def inline_gif_query(update: Update, context: CallbackContext) -> int:
-    return BotController(update, context).inline_gif_query()
+    update.inline_query.answer(BotController(update, context).inline_gif_query())
 
 def get_gif(update: Update, context: CallbackContext) -> int:
     return BotController(update, context).get_gif()
